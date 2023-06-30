@@ -1,0 +1,13 @@
+name: create a new commit issue
+
+on:
+ issues:
+    types: [opened]
+    
+jobs:
+  comment-with-actions:
+     runs-on: ubuntu-lastest
+     steps:
+       - name: "dump github-context"
+         run: echo '${{ toJSON(github.event) }}' | jq
+         shell: bash
